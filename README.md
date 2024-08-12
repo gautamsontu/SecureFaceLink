@@ -58,7 +58,8 @@ Testing the System
 Use the provided web interface to send a "Request Access" command to the Raspberry Pi.
 The Raspberry Pi captures an image, processes it, and returns an authentication response to the server.
 The server then displays the result on the web interface.
-Project Structure
+
+**Project Structure**
 
 ├── FaceAuth/
 │   ├── encodings.pickle       # Pre-stored face encodings
@@ -72,6 +73,7 @@ Project Structure
 ├── generate_key.py            # Script to generate a 256-bit AES key
 ├── index.html                 # Web interface for sending authentication requests
 └── README.md                  # Project documentation
+
 Security Considerations
 Ensure that the secret.key file is securely stored and transferred between devices to prevent unauthorized access.
 The SSL/TLS certificates should be generated with a strong key length (e.g., 4096 bits) to ensure secure communication.
