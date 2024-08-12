@@ -43,7 +43,8 @@ Securely transfer the generated secret.key file from the Raspberry Pi to the ser
 
 
 scp /path/to/secret.key pi@<IP_Address>:/home/pi/FaceAuth/
-Usage
+
+## Usage
 Running the Server (PC)
 Ensure the secret.key is in the correct directory on the server.
 Start the server script:
@@ -59,7 +60,7 @@ Use the provided web interface to send a "Request Access" command to the Raspber
 The Raspberry Pi captures an image, processes it, and returns an authentication response to the server.
 The server then displays the result on the web interface.
 
-**Project Structure**
+## Project Structure
 
 ├── FaceAuth/
 │   ├── encodings.pickle       # Pre-stored face encodings
@@ -74,15 +75,15 @@ The server then displays the result on the web interface.
 ├── index.html                 # Web interface for sending authentication requests
 └── README.md                  # Project documentation
 
-Security Considerations
+## Security Considerations
 Ensure that the secret.key file is securely stored and transferred between devices to prevent unauthorized access.
 The SSL/TLS certificates should be generated with a strong key length (e.g., 4096 bits) to ensure secure communication.
 Regularly update the dependencies and perform security audits to ensure the system remains secure against potential vulnerabilities.
 
-Contributing
+## Contributing
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
 
-Acknowledgements
+## Acknowledgements
 This project uses the cryptography library for encryption, OpenCV for image processing, and face_recognition for facial recognition.
 Special thanks to the contributors and open-source community for their valuable libraries and tools.
 
