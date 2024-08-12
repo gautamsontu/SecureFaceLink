@@ -61,7 +61,7 @@ The Raspberry Pi captures an image, processes it, and returns an authentication 
 The server then displays the result on the web interface.
 
 ## Project Structure
-
+```markdown
 ├── FaceAuth/
 │   ├── encodings.pickle       # Pre-stored face encodings
 │   ├── haarcascade_frontalface_default.xml  # Haarcascade XML for face detection
