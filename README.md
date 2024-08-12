@@ -23,8 +23,7 @@ Before running this project, ensure that you have the following installed:
 - A server (PC) capable of running Python scripts and handling SSL/TLS connections
 
 ## Installation
-
-1. **Clone the Repository**
+**Clone the Repository**
    git clone https://github.com/gautamsontu/SecureFaceLink.git
 Install Required Python Packages
 
