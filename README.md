@@ -86,7 +86,6 @@ Special thanks to the contributors and open-source community for their valuable 
 
 ## Project Structure
 ```markdown
-```plaintext
 ├── FaceAuth/
 │   ├── encodings.pickle                       # Pre-stored face encodings
 │   ├── haarcascade_frontalface_default.xml    # Haarcascade XML for face detection
