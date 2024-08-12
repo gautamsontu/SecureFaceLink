@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Authentication Server</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #1e1e1e;
+            color: #33ff33;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: left;
+            background-color: #0e0e0e;
+            padding: 1.5rem;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+        }
+        h1 {
+            color: #33ff33;
+            border-bottom: 1px solid #33ff33;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 1rem;
+            color: #33ff33;
+            background-color: #1e1e1e;
+            border: 1px solid #33ff33;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+        button:hover {
+            background-color: #33ff33;
+            color: #1e1e1e;
+        }
+        .response {
+            margin-top: 1rem;
+            padding: 0.5rem;
+            border: 1px solid #33ff33;
+            border-radius: 5px;
+            background-color: #1e1e1e;
+        }
+        .command-line {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Amazon EC2 Application Server</h1>
+        <div class="command-line">Server&gt; <button onclick="requestAccess()">Request Access</button></div>
+        <div id="response" class="response"></div>
+    </div>
+
+    <script>
+        function requestAccess() {
+            // Update the response div to show request status
+            const responseDiv = document.getElementById('response');
+            responseDiv.textContent = "Request sent, please wait to get your face authenticated";
+
+            // Send the request to the server
+            fetch('http://localhost:5000/request-access', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ action: 'request_access' })
+            })
+            .then(response => response.json())
+            .then(data => {
+                responseDiv.textContent = data.message;
+            })
+            .catch(error => {
+                responseDiv.textContent = `Error: ${error}`;
+            });
+        }
+    </script>
+</body>
+</html>
