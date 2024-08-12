@@ -60,20 +60,6 @@ Use the provided web interface to send a "Request Access" command to the Raspber
 The Raspberry Pi captures an image, processes it, and returns an authentication response to the server.
 The server then displays the result on the web interface.
 
-## Project Structure
-```markdown
-├── FaceAuth/
-│   ├── encodings.pickle       # Pre-stored face encodings
-│   ├── haarcascade_frontalface_default.xml  # Haarcascade XML for face detection
-│   ├── secret.key             # AES key for encryption/decryption
-│   ├── server.crt             # SSL/TLS certificate
-│   ├── server.key             # SSL/TLS private key
-│   ├── main.py                # Client script for Raspberry Pi
-│   └── Requests/              # Directory to store images of recognized faces
-├── server_script.py           # Server script for handling requests
-├── generate_key.py            # Script to generate a 256-bit AES key
-├── index.html                 # Web interface for sending authentication requests
-└── README.md                  # Project documentation
 
 ## Security Considerations
 Ensure that the secret.key file is securely stored and transferred between devices to prevent unauthorized access.
@@ -97,3 +83,20 @@ Special thanks to the contributors and open-source community for their valuable 
 - **Project Structure**: A high-level overview of the directory structure and key files.
 - **Security Considerations**: Highlights the importance of secure key management and regular updates.
 - **License and Contributions**: Details about licensing and how to contribute to the project.
+
+## Project Structure
+```markdown
+```plaintext
+├── FaceAuth/
+│   ├── encodings.pickle                       # Pre-stored face encodings
+│   ├── haarcascade_frontalface_default.xml    # Haarcascade XML for face detection
+│   ├── secret.key                             # AES key for encryption/decryption
+│   ├── server.crt                             # SSL/TLS certificate
+│   ├── server.key                             # SSL/TLS private key
+│   ├── main.py                                # Client script for Raspberry Pi
+│   └── Requests/                              # Directory to store images of recognized faces
+├── server_script.py                           # Server script for handling requests
+├── generate_key.py                            # Script to generate a 256-bit AES key
+├── index.html                                 # Web interface for sending authentication requests
+├── requirements.txt                           # Python dependencies
+└── README.md                                  # Project documentation
