@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Navigate to the script's directory
+
 cd /home/pi/FaceAuth
 
-# Define the command to run the Python script
+
 PYTHON_CMD="/usr/bin/python3 /home/pi/FaceAuth/main.py"
 
-# Check if the script is already running
+
 Process1=$(pgrep -f -x "$PYTHON_CMD")
 
 if [ ! -z "$Process1" ]; then
