@@ -4,7 +4,7 @@ import subprocess
 import re
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+CORS(app) 
 
 
 @app.route('/')
@@ -15,16 +15,16 @@ def index():
 @app.route('/request-access', methods=['POST'])
 def request_access():
     try:
-        # Call the server script
+        
         result = subprocess.run(['python', 'server_script.py'], capture_output=True, text=True)
 
-        # Log the result for debugging
+        
         print("Result stdout:", result.stdout)
         print("Result stderr:", result.stderr)
         print("Return code:", result.returncode)
 
         if result.returncode == 0:
-            # Extract the name and status from the output
+            
             match = re.search(r"Server Response: (.*), Authenticated", result.stdout)
             if match:
                 name = match.group(1)
