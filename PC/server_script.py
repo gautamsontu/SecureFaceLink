@@ -10,7 +10,7 @@ with open('secret.key', 'rb') as key_file:
 
 
 def encrypt_message(message):
-    iv = os.urandom(16)  # Generate a random 16-byte IV (Initialization Vector)
+    iv = os.urandom(16)  
     cipher = Cipher(algorithms.AES(key), modes.CFB(iv), backend=default_backend())
     encryptor = cipher.encryptor()
     encrypted_message = iv + encryptor.update(message.encode()) + encryptor.finalize()
@@ -18,7 +18,7 @@ def encrypt_message(message):
 
 
 def decrypt_message(encrypted_message):
-    iv = encrypted_message[:16]  # Extract the IV from the beginning of the encrypted message
+    iv = encrypted_message[:16] 
     cipher = Cipher(algorithms.AES(key), modes.CFB(iv), backend=default_backend())
     decryptor = cipher.decryptor()
     decrypted_message = decryptor.update(encrypted_message[16:]) + decryptor.finalize()
